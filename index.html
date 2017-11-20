@@ -172,10 +172,10 @@
 								  <div class="modal-header">
 									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 									<h3 class="modal-title" id="myModalLabel">Мы вам перезвоним</h3>
-									<h4 class="modal-title" id="myModalLabel">Просто введите ваши контактные данные</h4>									
+									<h4 class="modal-title">Просто введите ваши контактные данные</h4>									
 								  </div>
 								  <div class="modal-body">
-									    <form class="form-horizontal" role="form">
+									    <form class="form-horizontal">
 										  <div class="form-group">
 											<label for="inputNumber" class="col-sm-2 control-label">Номер:</label>
 											<div class="col-sm-10">
@@ -237,6 +237,13 @@
 			var s = document.getElementsByTagName('script')[0];
 			s.parentNode.insertBefore(wf, s);
 		  })();
+		  $(document).ready(function() {
+				$("a").click(function () {
+					var elementClick = $(this).attr("href");
+					var destination = $(elementClick).offset().top;
+					$('body').animate({ scrollTop: destination }, 1100); 
+				});
+			});
 	</script>
 </body>
 </html>
