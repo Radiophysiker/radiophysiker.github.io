@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="yandex-verification" content="9ec0dc37687cfe9a" />
 	<title>Квартирный переезд</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/main.min.css">
@@ -222,9 +221,8 @@
        </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/scrypt.js"></script>
 	<script type="text/javascript">
 		  WebFontConfig = {
 			google: { families: [ 'Open+Sans:400,300,600,700:latin,cyrillic' ] }
@@ -237,12 +235,12 @@
 			var s = document.getElementsByTagName('script')[0];
 			s.parentNode.insertBefore(wf, s);
 		  })();
-		  $(document).ready(function() {
-				$("a").click(function () {
-					var elementClick = $(this).attr("href");
-					var destination = $(elementClick).offset().top;
-					$('body').animate({ scrollTop: destination }, 1100); 
-				});
+		  $(function(){
+			$("a[href^='#']").click(function(){
+					var _href = $(this).attr("href");
+					$("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+					return false;
+			});
 			});
 	</script>
 </body>
